@@ -1,15 +1,16 @@
 <script setup>
-import MainTab from './components/MainTab.vue'
+import ContactSearch from './views/ContactSearch.vue';
+import MainTab from './views/MainTab.vue';
 </script>
 
 <template>
   <div id="container" class="flex h-screen">
-    <nav id="SidebarNav">
+    <nav id="SidebarNav" class="flex">
       <MainTab />
-      <div>
+      <div id="control-section" class="w-[344px] hidden md:block">
         <ContactSearch />
       </div>
     </nav>
-    <main class="border border-red-500">b</main>
+    <main class="w-[100%] border-l">main section</main>
   </div>
 </template>
