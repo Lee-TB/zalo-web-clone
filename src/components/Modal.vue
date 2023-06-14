@@ -62,6 +62,6 @@ onClickOutside(modalRef, () => {
 .modal-enter-from,
 .modal-leave-to {
   opacity: 0;
-  transform: scale(0.9);
+  transform: scale(1.1);
 }
 </style>
