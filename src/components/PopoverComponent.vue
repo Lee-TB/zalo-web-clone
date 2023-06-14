@@ -15,7 +15,7 @@ onClickOutside(popoverRef, () => {
 <template>
   <div class="popover relative">
     <slot>popover trigger here</slot>
-    <div v-show="visible" ref="popoverRef" class="popover-content absolute" :class="placement">
+    <div v-show="visible" ref="popoverRef" class="popover-content absolute z-50" :class="placement">
       <slot name="content">content</slot>
     </div>
   </div>
