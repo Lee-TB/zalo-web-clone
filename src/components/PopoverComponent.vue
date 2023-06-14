@@ -1,10 +1,21 @@
+<!-- Popover Component -->
 <script setup>
+import { ref } from 'vue';
+import { onClickOutside } from '@vueuse/core';
+
 defineProps({ visible: Boolean, placement: String });
+const emit = defineEmits(['update:visible']);
+
+const popoverRef = ref(null);
+
+onClickOutside(popoverRef, () => {
+  emit('update:visible', false);
+});
 </script>
 <template>
   <div class="popover relative">
-    <slot>popover</slot>
-    <div v-show="visible" class="popover-content absolute" :class="placement">
+    <slot>popover trigger here</slot>
+    <div v-show="visible" ref="popoverRef" class="popover-content absolute" :class="placement">
       <slot name="content">content</slot>
     </div>
   </div>

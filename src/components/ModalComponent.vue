@@ -1,8 +1,11 @@
+<!-- Modal Component -->
 <script setup>
+import { ref } from 'vue';
+import { onClickOutside } from '@vueuse/core';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { ref, toRefs } from 'vue';
-import { onClickOutside } from '@vueuse/core';
+
+library.add(faXmark);
 
 const emit = defineEmits(['close']);
 const props = defineProps({
@@ -10,13 +13,11 @@ const props = defineProps({
   closable: { type: Boolean, default: false },
   maskClosable: { type: Boolean, default: true }
 });
-const { show, closable, maskClosable } = toRefs(props);
 
-library.add(faXmark);
 const modalRef = ref(null);
 
 onClickOutside(modalRef, () => {
-  if (maskClosable.value) {
+  if (props.maskClosable) {
     emit('close');
   }
 });
