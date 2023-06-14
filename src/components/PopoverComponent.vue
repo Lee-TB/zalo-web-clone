@@ -23,50 +23,50 @@ onClickOutside(popoverRef, () => {
 
 <style>
 .top {
-  @apply bottom-full left-1/2 -translate-x-1/2 mb-2;
+  @apply bottom-full left-1/2 -translate-x-1/2;
 }
 
 .bottom {
-  @apply top-full left-1/2 -translate-x-1/2 mt-2;
+  @apply top-full left-1/2 -translate-x-1/2;
 }
 
 .left {
-  @apply top-1/2 right-full -translate-y-1/2 mr-2;
+  @apply top-1/2 right-full -translate-y-1/2;
 }
 
 .right {
-  @apply top-1/2 left-full -translate-y-1/2 ml-2;
+  @apply top-1/2 left-full -translate-y-1/2;
 }
 
 .topLeft {
-  @apply bottom-full left-0 mb-2;
+  @apply bottom-full left-0;
 }
 
 .topRight {
-  @apply bottom-full right-0 mb-2;
+  @apply bottom-full right-0;
 }
 
 .bottomLeft {
-  @apply top-full left-0 mt-2;
+  @apply top-full left-0;
 }
 
 .bottomRight {
-  @apply top-full right-0 mt-2;
+  @apply top-full right-0;
 }
 
 .leftTop {
-  @apply top-0 right-full mr-2;
+  @apply top-0 right-full;
 }
 
 .leftBottom {
-  @apply bottom-0 right-full mr-2;
+  @apply bottom-0 right-full;
 }
 
 .rightTop {
-  @apply top-0 left-full ml-2;
+  @apply top-0 left-full;
 }
 
 .rightBottom {
-  @apply bottom-0 left-full ml-2;
+  @apply bottom-0 left-full;
 }
 </style>
