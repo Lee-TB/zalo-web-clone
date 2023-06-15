@@ -3,25 +3,54 @@
 import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 
-defineProps({ visible: Boolean, placement: String });
-const emit = defineEmits(['update:visible']);
+interface PopoverProps {
+  visible: boolean;
+  placement?:
+    | 'top'
+    | 'right'
+    | 'bottom'
+    | 'left'
+    | 'topLeft '
+    | 'topRight '
+    | 'bottomLeft '
+    | 'bottomRight '
+    | 'leftTop '
+    | 'leftBottom '
+    | 'rightTop'
+    | 'rightBottom';
+}
 
-const popoverRef = ref(null);
+withDefaults(defineProps<PopoverProps>(), {
+  placement: 'bottom'
+});
+
+const emit = defineEmits<{
+  'update:visible': [value: boolean];
+  clickOutside: [value: boolean];
+}>();
+
+const popoverRef = ref<HTMLElement | null>(null);
 
 onClickOutside(popoverRef, () => {
+  emit('clickOutside', false);
   emit('update:visible', false);
 });
 </script>
 <template>
   <div class="popover relative">
     <slot>popover trigger here</slot>
-    <div v-show="visible" ref="popoverRef" class="popover-content absolute z-50" :class="placement">
+    <div
+      v-show="visible"
+      ref="popoverRef"
+      class="popover-content absolute z-50"
+      :class="placement"
+    >
       <slot name="content">content</slot>
     </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .top {
   @apply bottom-full left-1/2 -translate-x-1/2;
 }
