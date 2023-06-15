@@ -1,10 +1,9 @@
-<script setup>
+<script setup lang="ts">
+import { ref, watch } from 'vue';
 import ContactSearch from './views/ContactSearch.vue';
 import MainTab from './views/MainTab.vue';
 import Modal from './components/ModalComponent.vue';
 import Popover from './components/PopoverComponent.vue';
-
-import { ref, watch } from 'vue';
 
 const showModal = ref(false);
 const visible = ref(false);

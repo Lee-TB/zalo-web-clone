@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import Poppover from '../components/PopoverComponent.vue';
 import { library } from '@fortawesome/fontawesome-svg-core';

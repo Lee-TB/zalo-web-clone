@@ -1,5 +1,5 @@
 <!-- Modal Component -->
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 import { library } from '@fortawesome/fontawesome-svg-core';
