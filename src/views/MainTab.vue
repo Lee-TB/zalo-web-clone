@@ -46,7 +46,7 @@ library.add(faPenToSquare);
 const showAvatarPopup = ref(false);
 const showSettingPopup = ref(false);
 const showToolPopup = ref(false);
-const showProfileModal = ref(true);
+const showProfileModal = ref(false);
 </script>
 
 <template>
