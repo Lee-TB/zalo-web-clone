@@ -17,9 +17,10 @@ const props = withDefaults(defineProps<ModalProps>(), {
   closable: false,
   maskClosable: true
 });
+
 const emit = defineEmits<{
-  onClose: [value: boolean];
-  onClickOutside: [value: boolean];
+  onClose: [value: boolean]; // when click close button
+  onClickOutside: [value: boolean]; // when click outside  
 }>();
 
 const modalRef = ref<HTMLElement | null>(null);
