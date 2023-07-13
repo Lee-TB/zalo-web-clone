@@ -28,6 +28,7 @@ const meta: Meta<typeof AppPopover> = {
   args: {
     visible: true
   },
+  tags: ['autodocs'],
   decorators: [() => ({ template: '<div style="margin: 3em; margin-bottom: 300px;"><story/></div>' })],
 };
 
