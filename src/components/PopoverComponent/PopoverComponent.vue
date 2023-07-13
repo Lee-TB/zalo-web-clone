@@ -1,6 +1,6 @@
 <!-- Popover Component -->
 <template>
-  <div class="popover relative inline-block">
+  <div class="popover relative">
     <slot>popover trigger here</slot>
     <div
       v-show="visible"
