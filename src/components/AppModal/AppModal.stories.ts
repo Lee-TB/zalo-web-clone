@@ -6,6 +6,11 @@ import AppModal from './AppModal.vue';
 import avatar from '@/assets/images/profile-avatar.jpg';
 import background from '@/assets/images/profile-background.jpg';
 
+const image = {
+  avatar,
+  background
+};
+
 const meta: Meta<typeof AppModal> = {
   title: 'Components/AppModal',
   component: AppModal,
@@ -13,12 +18,8 @@ const meta: Meta<typeof AppModal> = {
   decorators: [() => ({ template: '<div style="min-height: 100vh;"><story/></div>' })],
 };
 
-const image = {
-  avatar,
-  background
-};
 
-console.log(image)
+
 
 export default meta;
 type Story = StoryObj<typeof AppModal>;
@@ -117,6 +118,8 @@ export const Default: Story = {
     `
   }),
   args: {
-    show: true
+    show: false,
+    closable: true,
+    outsideClosable: true
   },
 };
