@@ -19,10 +19,9 @@ const props = withDefaults(defineProps<ModalProps>(), {
 });
 
 const emit = defineEmits<{
-  onClose: [value: boolean]; // when click close button
-  onClickOutside: [value: boolean]; // when click outside
+  (event: 'onClose', value: boolean): void;
+  (event: 'onClickOutside', value: boolean): void;
 }>();
-
 const modalRef = ref<HTMLElement | null>(null);
 
 onClickOutside(modalRef, () => {
@@ -46,7 +45,7 @@ onClickOutside(modalRef, () => {
             <font-awesome-icon
               class="w-[16px] h-[16px] text-gray-500 font-light"
               icon="fa-solid fa-xmark"
-            />
+            />            
             <span class="sr-only">close modal</span>
           </button>
         </div>
