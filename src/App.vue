@@ -2,8 +2,8 @@
 import { ref, watch } from 'vue';
 import ContactSearch from '@/views/ContactSearch.vue';
 import MainTab from '@/views/MainTab.vue';
-import Modal from '@/components/AppModal/AppModal.vue';
-import Popover from '@/components/AppPopover/AppPopover.vue';
+import AppModal from '@/components/AppModal/AppModal.vue';
+import AppPopover from '@/components/AppPopover/AppPopover.vue';
 import ContactsContainer from '@/views/Contacts/ContactsContainer.vue';
 import TodoContainer from '@/views/Todo/TodoContainer.vue';
 import MessagesContainer from '@/views/Messages/MessagesContainer.vue';
@@ -39,7 +39,7 @@ const tabs = {
         Open modal
       </button>
       <div>
-        <Popover
+        <AppPopover
           class="inline-block"
           v-model:visible="visible"
           placement="right"
@@ -55,17 +55,17 @@ const tabs = {
               <li v-for="n in 10" :key="n">{{ n }} item</li>
             </ul>
           </template>
-        </Popover>
+        </AppPopover>
       </div>
       <Teleport to="#modal">
-        <Modal
+        <AppModal
           :show="showModal"
           @on-click-outside="showModal = false"
           closable
           @on-close="showModal = false"
         >
           <div class="bg-white w-[400px] h-[400px]">something</div>
-        </Modal>
+        </AppModal>
       </Teleport>
 
     </main>

@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import AppPopover from '@/components/AppPopover/AppPopover.vue';
 import AppModal from '@/components/AppModal/AppModal.vue';
+import AppPopover from '@/components/AppPopover/AppPopover.vue';
+import AppAvatar from '@/components/AppAvatar/AppAvatar.vue';
+
+import { ref } from 'vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faCommentDots,
@@ -138,13 +140,14 @@ const showProfileModal = ref(false);
     </Teleport>
     <div class="pt-8 h-[100px]">
       <AppPopover v-model:visible="showAvatarPopup" placement="rightTop">
-        <img
-          @click="showAvatarPopup = true"
-          src="@/assets/images/profile-avatar.jpg"
-          alt="account avatar"
-          width="48"
-          class="rounded-full border border-white mx-auto cursor-pointer"
-        />
+        <div class="flex">
+          <AppAvatar
+            class="mx-auto cursor-pointer border border-white"        
+            :src="'/src/assets/images/profile-avatar.jpg'"
+            :alt="`account avatar`"
+            @click="showAvatarPopup = true"
+          />
+        </div>
 
         <template #content>
           <div
