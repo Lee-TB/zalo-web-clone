@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import Poppover from '@/components/PopoverComponent/PopoverComponent.vue';
-import Modal from '@/components/ModalComponent/ModalComponent.vue';
+import AppPopover from '@/components/AppPopover/AppPopover.vue';
+import AppModal from '@/components/AppModal/AppModal.vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faCommentDots,
@@ -52,7 +52,7 @@ const showProfileModal = ref(false);
 <template>
   <div id="MainTab" class="bg-[#0091ff] h-screen w-[64px]">
     <Teleport to="#modal">
-      <Modal
+      <AppModal
         :show="showProfileModal"
         :closable="true"
         @onClickOutside="showProfileModal = false"
@@ -134,13 +134,13 @@ const showProfileModal = ref(false);
             </div>
           </div>
         </div>
-      </Modal>
+      </AppModal>
     </Teleport>
     <div class="pt-8 h-[100px]">
-      <Poppover v-model:visible="showAvatarPopup" placement="rightTop">
+      <AppPopover v-model:visible="showAvatarPopup" placement="rightTop">
         <img
           @click="showAvatarPopup = true"
-          src="@/assets/f6c7f7f2a27107eeb043983dda48bb5c.jpg"
+          src="@/assets/images/profile-avatar.jpg"
           alt="account avatar"
           width="48"
           class="rounded-full border border-white mx-auto cursor-pointer"
@@ -171,7 +171,7 @@ const showProfileModal = ref(false);
             </div>
           </div>
         </template>
-      </Poppover>
+      </AppPopover>
     </div>
     <div class="h-[calc(100%-100px)] flex flex-col justify-between">
       <div id="nav-tabs-top" class="w-full">
@@ -217,7 +217,7 @@ const showProfileModal = ref(false);
           />
         </div>
 
-        <Poppover v-model:visible="showToolPopup" placement="rightTop">
+        <AppPopover v-model:visible="showToolPopup" placement="rightTop">
           <div
             @click="showToolPopup = true"
             class="h-[64px] w-full flex items-center justify-center hover:bg-[#006edc] cursor-pointer"
@@ -272,9 +272,9 @@ const showProfileModal = ref(false);
               </div>
             </div>
           </template>
-        </Poppover>
+        </AppPopover>
 
-        <Poppover v-model:visible="showSettingPopup" placement="topLeft ">
+        <AppPopover v-model:visible="showSettingPopup" placement="topLeft ">
           <div
             @click="showSettingPopup = true"
             class="h-[64px] w-full flex items-center justify-center hover:bg-[#006edc] cursor-pointer"
@@ -372,7 +372,7 @@ const showProfileModal = ref(false);
               </div>
             </div>
           </template>
-        </Poppover>
+        </AppPopover>
       </div>
     </div>
   </div>

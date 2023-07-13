@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import ButtonComponent from '@/components/ButtonComponent/ButtonComponent.vue';
-import PopoverComponent from '@/components/PopoverComponent/PopoverComponent.vue';
+import AppButton from '@/components/AppButton/AppButton.vue';
+import AppPopover from '@/components/AppPopover/AppPopover.vue';
 
-const meta: Meta<typeof PopoverComponent> = {
-  title: 'Components/PopoverComponent',
-  component: PopoverComponent,
-  tags: ['autodocs'],
+const meta: Meta<typeof AppPopover> = {
+  title: 'Components/AppPopover',
+  component: AppPopover,
   argTypes: {
     placement: {
       control: 'select',
@@ -33,29 +32,27 @@ const meta: Meta<typeof PopoverComponent> = {
 };
 
 export default meta;
+type Story = StoryObj<typeof AppPopover>;
 
-type Story = StoryObj<typeof PopoverComponent>;
+// Stories
 export const Default: Story = {
   render: (args) => ({
-    components: { PopoverComponent, ButtonComponent },
+    components: { AppPopover, AppButton },
     setup() {
       return { args };
     },
     template: `
-      <PopoverComponent v-bind="args">
-        <ButtonComponent v-bind="args.buttonProps" @click="args.visible=!args.visible">Trigger</ButtonComponent>
+      <AppPopover v-bind="args">
+        <AppButton type="primary" @click="args.visible=!args.visible">Trigger</AppButton>
         <template #content> 
           <ul class="bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] drop-shadow-md p-4 w-[100px]">
             <li v-for="n in 3" :key="n">{{ n }} item</li>
           </ul>
         </template>
-      </PopoverComponent>
+      </AppPopover>
     `
   }),
   args: {
-    buttonProps: {
-      type: 'primary'
-    },
-    visible: true
+    visible: true,    
   }
 };

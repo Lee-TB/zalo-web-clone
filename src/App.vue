@@ -2,8 +2,8 @@
 import { ref, watch } from 'vue';
 import ContactSearch from '@/views/ContactSearch.vue';
 import MainTab from '@/views/MainTab.vue';
-import Modal from '@/components/ModalComponent/ModalComponent.vue';
-import Popover from '@/components/PopoverComponent/PopoverComponent.vue';
+import Modal from '@/components/AppModal/AppModal.vue';
+import Popover from '@/components/AppPopover/AppPopover.vue';
 import ContactsContainer from '@/views/Contacts/ContactsContainer.vue';
 import TodoContainer from '@/views/Todo/TodoContainer.vue';
 import MessagesContainer from '@/views/Messages/MessagesContainer.vue';
