@@ -1,6 +1,6 @@
 <!-- Popover Component -->
 <template>
-  <div class="popover relative">
+  <div class="popover relative inline-block">
     <slot>popover trigger here</slot>
     <div
       v-show="visible"
@@ -16,15 +16,29 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
-import type { placementUnion } from '@/components/types/placementUnion.ts';
 
 interface PopoverProps {
   visible: boolean;
-  placement?: placementUnion;
+  /**
+   * can be set to `top` `right` `bottom` `left` `topLeft ` `topRight ` `bottomLeft ` `bottomRight ` `leftTop ` `leftBottom ` `rightTop` `rightBottom`.
+   */
+  placement?:
+    | 'top'
+    | 'right'
+    | 'bottom'
+    | 'left'
+    | 'topLeft '
+    | 'topRight '
+    | 'bottomLeft '
+    | 'bottomRight '
+    | 'leftTop '
+    | 'leftBottom '
+    | 'rightTop'
+    | 'rightBottom';
 }
 
 withDefaults(defineProps<PopoverProps>(), {
-  placement: 'bottom'
+  placement: 'bottomLeft '
 });
 
 const emit = defineEmits<{
