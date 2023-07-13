@@ -11,7 +11,7 @@ const meta: Meta<typeof AppButton> = {
       control: 'select',
       options: ['primary', 'default', 'dashed', 'text', 'link']
     },
-    size: { control: 'select', options: ['small', 'middle', 'large'] }
+    size: { control: 'select', options: ['small', 'medium', 'large'] }
   }
 };
 
@@ -53,7 +53,7 @@ export const Size: Story = {
           <AppButton type="primary" size="small">small button</AppButton>
         </div>
         <div>
-          <AppButton type="primary" size="middle">middle button</AppButton>
+          <AppButton type="primary" size="medium">medium button</AppButton>
         </div>
         <div>
           <AppButton type="primary" size="large">large button</AppButton>

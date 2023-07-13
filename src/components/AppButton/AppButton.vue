@@ -13,14 +13,15 @@ interface ButtonProps {
    */
   type?: 'primary' | 'default' | 'dashed' | 'text' | 'link';
   /**
-   * Can be set to `small` `middle` `large`.
+   * Can be set to `small` `medium` `large`.
    */
-  size?: 'small' | 'middle' | 'large';
+  size?: 'small' | 'medium' | 'large';
 }
 
 const props = defineProps<ButtonProps>();
+const emit = defineEmits()
 
-const classes = computed(() => ({
+const classes = computed(() => ({ 
   'btn-primary': props.type === 'primary',
   'btn-dashed': props.type === 'dashed',
   'btn-text': props.type === 'text',
@@ -29,7 +30,7 @@ const classes = computed(() => ({
   'btn-default':
     props.type === 'default',
   'text-sm': props.size === 'small',
-  'text-md': props.size === 'middle',
+  'text-md': props.size === 'medium',
   'px-4 py-2 text-lg': props.size === 'large',
 }));
 </script>
