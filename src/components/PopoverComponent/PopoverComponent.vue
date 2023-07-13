@@ -1,23 +1,26 @@
 <!-- Popover Component -->
+<template>
+  <div class="popover relative">
+    <slot>popover trigger here</slot>
+    <div
+      v-show="visible"
+      ref="popoverRef"
+      class="popover-content absolute z-50"
+      :class="placement"
+    >
+      <slot name="content">content</slot>
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
+import type { placementUnion } from '@/components/types/placementUnion.ts';
 
 interface PopoverProps {
   visible: boolean;
-  placement?:
-    | 'top'
-    | 'right'
-    | 'bottom'
-    | 'left'
-    | 'topLeft '
-    | 'topRight '
-    | 'bottomLeft '
-    | 'bottomRight '
-    | 'leftTop '
-    | 'leftBottom '
-    | 'rightTop'
-    | 'rightBottom';
+  placement?: placementUnion;
 }
 
 withDefaults(defineProps<PopoverProps>(), {
@@ -36,19 +39,6 @@ onClickOutside(popoverRef, () => {
   emit('update:visible', false);
 });
 </script>
-<template>
-  <div class="popover relative">
-    <slot>popover trigger here</slot>
-    <div
-      v-show="visible"
-      ref="popoverRef"
-      class="popover-content absolute z-50"
-      :class="placement"
-    >
-      <slot name="content">content</slot>
-    </div>
-  </div>
-</template>
 
 <style scoped>
 .top {

@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<ModalProps>(), {
 
 const emit = defineEmits<{
   onClose: [value: boolean]; // when click close button
-  onClickOutside: [value: boolean]; // when click outside  
+  onClickOutside: [value: boolean]; // when click outside
 }>();
 
 const modalRef = ref<HTMLElement | null>(null);
