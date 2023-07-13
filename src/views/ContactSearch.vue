@@ -47,10 +47,16 @@ watch(isFocus, () => {
     <div>
       <div v-show="!isFocus">
         <button class="w-[32px] h-[32px] hover:bg-gray-200 rounded-md">
-          <font-awesome-icon class="text-gray-500 text-sm" icon="fa-solid fa-user-plus" />
+          <font-awesome-icon
+            class="text-gray-500 text-sm"
+            icon="fa-solid fa-user-plus"
+          />
         </button>
         <button class="w-[32px] h-[32px] hover:bg-gray-200 rounded-md">
-          <font-awesome-icon class="text-gray-500 text-sm" icon="fa-solid fa-user-group" />
+          <font-awesome-icon
+            class="text-gray-500 text-sm"
+            icon="fa-solid fa-user-group"
+          />
         </button>
       </div>
       <div v-show="isFocus">

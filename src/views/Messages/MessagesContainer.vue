@@ -1,3 +1,3 @@
 <template>
-    <div>messages container</div>
+  <div>messages container</div>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import Poppover from '@/components/PopoverComponent.vue';
-import Modal from '@/components/ModalComponent.vue';
+import Poppover from '@/components/PopoverComponent/PopoverComponent.vue';
+import Modal from '@/components/ModalComponent/ModalComponent.vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faCommentDots,

@@ -2,12 +2,11 @@
 import { ref, watch } from 'vue';
 import ContactSearch from '@/views/ContactSearch.vue';
 import MainTab from '@/views/MainTab.vue';
-import Modal from '@/components/ModalComponent.vue';
-import Popover from '@/components/PopoverComponent.vue';
+import Modal from '@/components/ModalComponent/ModalComponent.vue';
+import Popover from '@/components/PopoverComponent/PopoverComponent.vue';
 import ContactsContainer from '@/views/Contacts/ContactsContainer.vue';
 import TodoContainer from '@/views/Todo/TodoContainer.vue';
 import MessagesContainer from '@/views/Messages/MessagesContainer.vue';
-
 
 const showModal = ref(false);
 const visible = ref(false);
@@ -18,9 +17,8 @@ watch(showModal, () => {
 const tabs = {
   MessagesContainer,
   ContactsContainer,
-  TodoContainer,
-}
-
+  TodoContainer
+};
 </script>
 
 <template>
@@ -69,6 +67,7 @@ const tabs = {
           <div class="bg-white w-[400px] h-[400px]">something</div>
         </Modal>
       </Teleport>
+
     </main>
   </div>
 </template>
