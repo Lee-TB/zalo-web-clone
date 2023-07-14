@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import ContactSearch from '@/views/ContactSearch.vue';
-import MainTab from '@/views/MainTab.vue';
+import ContactSearch from '@/components/widgets/ContactSearch/ContactSearch.vue';
+import Sidebar from '@/layouts/Sidebar/Sidebar.vue';
 import AppModal from '@/components/AppModal/AppModal.vue';
 import AppPopover from '@/components/AppPopover/AppPopover.vue';
 import ContactsContainer from '@/views/Contacts/ContactsContainer.vue';
@@ -24,10 +24,9 @@ const tabs = {
 <template>
   <div id="container" class="flex h-screen">
     <nav id="SidebarNav" class="flex">
-      <MainTab />
+      <Sidebar />
       <div id="control-section" class="w-[344px] hidden md:block">
         <ContactSearch />
-
         <component :is="tabs['MessagesContainer']" class="tab"></component>
       </div>
     </nav>

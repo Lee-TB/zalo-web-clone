@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-block overflow-hidden" :class="[classes, sizeClass]">
+  <div class="AppAvatar inline-block overflow-hidden" :class="[classes, sizeClass]">
     <img :src="src" :alt="alt" :width="size" class="object-contain"/>
   </div>
 </template>

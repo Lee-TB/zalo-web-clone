@@ -1,7 +1,7 @@
-import '@/assets/main.css';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
 import { createApp } from 'vue';
 import App from '@/App.vue';
 
-createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app');
+// These things below are global, you need to import them into .storybook/preview.ts
+import '@/assets/css/main.css';
+
+createApp(App).mount('#app');

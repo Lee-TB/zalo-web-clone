@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue';
+
+// import and add font awesome icons
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +13,6 @@ library.add(faCircleXmark);
 library.add(faUserPlus);
 library.add(faUserGroup);
 
-import { ref, watch } from 'vue';
 const searchText = ref('');
 const isFocus = ref(false);
 watch(isFocus, () => {

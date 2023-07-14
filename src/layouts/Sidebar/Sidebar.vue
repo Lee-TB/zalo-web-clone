@@ -1,53 +1,16 @@
 <script setup lang="ts">
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import './font-awesome-icon';
+
 import AppModal from '@/components/AppModal/AppModal.vue';
 import AppPopover from '@/components/AppPopover/AppPopover.vue';
 import AppAvatar from '@/components/AppAvatar/AppAvatar.vue';
 
 import { ref } from 'vue';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faCommentDots,
-  faAddressBook,
-  faUser,
-  faStar,
-  faMessage,
-  faPenToSquare
-} from '@fortawesome/free-regular-svg-icons';
-import {
-  faSquareCheck,
-  faCloud,
-  faGear,
-  faBriefcase,
-  faDatabase,
-  faWrench,
-  faInfoCircle,
-  faGlobe,
-  faChevronRight,
-  faBullhorn,
-  faExclamationCircle
-} from '@fortawesome/free-solid-svg-icons';
 
-library.add(faCommentDots);
-library.add(faSquareCheck);
-library.add(faAddressBook);
-library.add(faGear);
-library.add(faBriefcase);
-library.add(faCloud);
-library.add(faUser);
-library.add(faDatabase);
-library.add(faWrench);
-library.add(faInfoCircle);
-library.add(faGlobe);
-library.add(faChevronRight);
-library.add(faStar);
-library.add(faMessage);
-library.add(faBullhorn);
-library.add(faExclamationCircle);
-library.add(faPenToSquare);
-
-const showAvatarPopup = ref(false);
-const showSettingPopup = ref(false);
-const showToolPopup = ref(false);
+const showAvatarPopup = ref(true);
+const showSettingPopup = ref(true);
+const showToolPopup = ref(true);
 const showProfileModal = ref(false);
 </script>
 
@@ -142,9 +105,10 @@ const showProfileModal = ref(false);
       <AppPopover v-model:visible="showAvatarPopup" placement="rightTop">
         <div class="flex">
           <AppAvatar
-            class="mx-auto cursor-pointer border border-white"        
+            class="mx-auto cursor-pointer border border-white"
             :src="'/src/assets/images/profile-avatar.jpg'"
             :alt="`account avatar`"
+            :size="46"
             @click="showAvatarPopup = true"
           />
         </div>
