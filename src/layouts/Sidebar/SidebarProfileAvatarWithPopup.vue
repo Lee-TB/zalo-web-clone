@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import AppPopover from '@/components/AppPopover/AppPopover.vue';
+import AppAvatar from '@/components/AppAvatar/AppAvatar.vue';
+import { ref, inject, type Ref } from 'vue';
+
+const showAvatarPopup = ref(false);
+const showProfileModal = inject('showProfileModal') as Ref<boolean>;
+</script>
+
 <template>
   <AppPopover v-model:visible="showAvatarPopup" placement="rightTop">
     <div class="flex">
@@ -38,11 +47,4 @@
   </AppPopover>
 </template>
 
-<script setup lang="ts">
-import AppPopover from '@/components/AppPopover/AppPopover.vue';
-import AppAvatar from '@/components/AppAvatar/AppAvatar.vue';
-import { ref, inject, type Ref } from 'vue';
 
-const showAvatarPopup = ref(true);
-const showProfileModal = inject('showProfileModal') as Ref<boolean>;
-</script>
