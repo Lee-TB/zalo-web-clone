@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
 import { AppModal } from '@/components/AppModal';
 import { inject, ref, type Ref } from 'vue'
 
@@ -42,9 +44,9 @@ const showProfileModal: Ref<boolean> = inject('showProfileModal', ref(false)); /
           <p class="my-[14px] text-[14px] font-medium">Thông tin cá nhân</p>
           <div class="mt-[14px] mb-[22px]">
             <div class="flex text-[14px] mb-[14px]">
-              <faDivide class="w-[110px] font-medium text-gray-400">
+              <div class="w-[110px] font-medium text-gray-400">
                 Điện thoại
-              </faDivide>
+              </div>
               <div>
                 <span>+84337611246</span>
                 <font-awesome-icon
@@ -55,17 +57,17 @@ const showProfileModal: Ref<boolean> = inject('showProfileModal', ref(false)); /
               </div>
             </div>
             <div class="flex text-[14px] mb-[14px]">
-              <faDivide class="w-[110px] font-medium text-gray-400">
+              <div class="w-[110px] font-medium text-gray-400">
                 Giới tính
-              </faDivide>
+              </div>
               <div>
                 <span>Nam</span>
               </div>
             </div>
             <div class="flex text-[14px] mb-[14px]">
-              <faDivide class="w-[110px] font-medium text-gray-400">
+              <div class="w-[110px] font-medium text-gray-400">
                 Ngày sinh
-              </faDivide>
+              </div>
               <div>
                 <span>24 tháng 12, 1999</span>
               </div>
