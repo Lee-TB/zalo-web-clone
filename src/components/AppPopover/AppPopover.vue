@@ -27,18 +27,18 @@ interface PopoverProps {
     | 'right'
     | 'bottom'
     | 'left'
-    | 'topLeft '
-    | 'topRight '
-    | 'bottomLeft '
-    | 'bottomRight '
-    | 'leftTop '
-    | 'leftBottom '
+    | 'topLeft'
+    | 'topRight'
+    | 'bottomLeft'
+    | 'bottomRight'
+    | 'leftTop'
+    | 'leftBottom'
     | 'rightTop'
     | 'rightBottom';
 }
 
 withDefaults(defineProps<PopoverProps>(), {
-  placement: 'bottomLeft '
+  placement: 'bottomLeft'
 });
 
 const emit = defineEmits<{
