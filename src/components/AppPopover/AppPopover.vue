@@ -42,8 +42,8 @@ withDefaults(defineProps<PopoverProps>(), {
 });
 
 const emit = defineEmits<{
-  'update:visible': [value: boolean];
-  clickOutside: [value: boolean];
+  (event: 'update:visible', value: boolean): void;
+  (event: 'clickOutside', value: boolean): void;
 }>();
 
 const popoverRef = ref<HTMLElement | null>(null);
