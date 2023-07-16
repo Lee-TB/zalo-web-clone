@@ -26,7 +26,7 @@ type avatarProps = {
   /**
    * The shape of avatar
    */
-  shape: 'circle' | 'square';
+  shape?: 'circle' | 'square';
 };
 const props = withDefaults(defineProps<avatarProps>(), {
   size: 48,

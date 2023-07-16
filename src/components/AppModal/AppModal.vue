@@ -15,11 +15,11 @@ interface ModalProps {
   /**
    * Display close button
    */
-  closable: boolean;
+  closable?: boolean;
   /**
    * Whether to close the modal dialog when the outside is clicked
    */
-  outsideClosable: boolean;
+  outsideClosable?: boolean;
 }
 
 const props = withDefaults(defineProps<ModalProps>(), {
