@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref } from 'vue';
 
 // import and add font awesome icons
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -15,9 +15,6 @@ library.add(faUserGroup);
 
 const searchText = ref('');
 const isFocus = ref(false);
-watch(isFocus, () => {
-  console.log(isFocus.value);
-});
 </script>
 <template>
   <div class="h-[64px] px-[16px] flex items-center gap-2">
