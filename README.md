@@ -50,3 +50,9 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+### UI components documentation with [Storybook](https://storybook.js.org/)
+
+```sh
+npm run storybook
+```
