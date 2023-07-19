@@ -11,4 +11,6 @@ const selectedKey = inject('selectedKey') as Ref<string>; // receive selectedKey
 
 const currentInstance = getCurrentInstance(); // get current component instance
 const key = ref(currentInstance?.vnode.key) as Ref<string>; // get key prop is passed in this component
+
+defineExpose({ vnode: currentInstance?.vnode });
 </script>
