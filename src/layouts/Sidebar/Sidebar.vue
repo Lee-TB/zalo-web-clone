@@ -16,7 +16,7 @@ const selectedTab = inject('selectedTab') as Ref<string>;
 </script>
 
 <template>
-  <div id="MainTab" class="bg-[#0091ff] h-screen w-[64px]">
+  <div id="MainTab" class="bg-background-leftmenu h-screen w-[64px]">
     <div class="pt-8 h-[100px]">
       <SidebarProfileAvatarWithPopup />
     </div>
@@ -25,8 +25,8 @@ const selectedTab = inject('selectedTab') as Ref<string>;
         <AppTabs v-model:activeKey="selectedTab">
           <AppTabPane
             key="Messages"
-            class="h-[64px] w-full flex items-center justify-center hover:bg-[#006edc] cursor-pointer"
-            :class="selectedTab === 'Messages' ? 'bg-[#006edc]' : ''"
+            class="h-[64px] w-full flex items-center justify-center hover:bg-background-leftmenu-hover cursor-pointer"
+            :class="selectedTab === 'Messages' ? 'bg-background-leftmenu-selected' : ''"
             id="message-tab"
           >
             <font-awesome-icon
@@ -36,8 +36,8 @@ const selectedTab = inject('selectedTab') as Ref<string>;
           </AppTabPane>
           <AppTabPane
             key="Contacts"
-            class="h-[64px] w-full flex items-center justify-center hover:bg-[#006edc] cursor-pointer"
-            :class="selectedTab === 'Contacts' ? 'bg-[#006edc]' : ''"
+            class="h-[64px] w-full flex items-center justify-center hover:bg-background-leftmenu-hover cursor-pointer"
+            :class="selectedTab === 'Contacts' ? 'bg-background-leftmenu-selected' : ''"
             id="contact-tab"
           >
             <font-awesome-icon
@@ -48,8 +48,8 @@ const selectedTab = inject('selectedTab') as Ref<string>;
           </AppTabPane>
           <AppTabPane
             key="Todo"
-            class="h-[64px] w-full flex items-center justify-center hover:bg-[#006edc] cursor-pointer"
-            :class="selectedTab === 'Todo' ? 'bg-[#006edc]' : ''"
+            class="h-[64px] w-full flex items-center justify-center hover:bg-background-leftmenu-hover cursor-pointer"
+            :class="selectedTab === 'Todo' ? 'bg-background-leftmenu-selected' : ''"
             id="todo-tab"
           >
             <font-awesome-icon
