@@ -13,6 +13,8 @@ import { AppTabPane } from '@/components/AppTabPane';
 import { inject, type Ref } from 'vue';
 
 const selectedTab = inject('selectedTab') as Ref<string>;
+const appTabs = inject('appTabs') as Ref<string>;
+const appTabsKeys = Object.keys(appTabs)
 </script>
 
 <template>
@@ -24,10 +26,9 @@ const selectedTab = inject('selectedTab') as Ref<string>;
       <div id="nav-tabs-top" class="w-full">
         <AppTabs v-model:activeKey="selectedTab">
           <AppTabPane
-            key="Messages"
+            :key="appTabsKeys[0]"
             class="h-[64px] w-full flex items-center justify-center hover:bg-background-leftmenu-hover cursor-pointer"
-            :class="selectedTab === 'Messages' ? 'bg-background-leftmenu-selected' : ''"
-            id="message-tab"
+            :class="selectedTab === appTabsKeys[0] ? 'bg-background-leftmenu-selected' : ''"            
           >
             <font-awesome-icon
               class="text-white text-2xl"
@@ -35,10 +36,9 @@ const selectedTab = inject('selectedTab') as Ref<string>;
             />
           </AppTabPane>
           <AppTabPane
-            key="Contacts"
+            :key="appTabsKeys[1]"
             class="h-[64px] w-full flex items-center justify-center hover:bg-background-leftmenu-hover cursor-pointer"
-            :class="selectedTab === 'Contacts' ? 'bg-background-leftmenu-selected' : ''"
-            id="contact-tab"
+            :class="selectedTab === appTabsKeys[1] ? 'bg-background-leftmenu-selected' : ''"
           >
             <font-awesome-icon
               class="text-white text-2xl"
@@ -47,10 +47,9 @@ const selectedTab = inject('selectedTab') as Ref<string>;
             />
           </AppTabPane>
           <AppTabPane
-            key="Todo"
+            :key="appTabsKeys[2]"
             class="h-[64px] w-full flex items-center justify-center hover:bg-background-leftmenu-hover cursor-pointer"
-            :class="selectedTab === 'Todo' ? 'bg-background-leftmenu-selected' : ''"
-            id="todo-tab"
+            :class="selectedTab === appTabsKeys[2] ? 'bg-background-leftmenu-selected' : ''"
           >
             <font-awesome-icon
               class="text-white text-2xl"

@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 
 // Stories
 export const Type: Story = {
-  render: (args) => ({
+  render: () => ({
     components: { AppButton },
     template: `
       <div class="flex gap-2">
@@ -45,7 +45,7 @@ export const Type: Story = {
 };
 
 export const Size: Story = {
-  render: (args) => ({
+  render: () => ({
     components: { AppButton },
     template: `
       <div class="flex gap-2">

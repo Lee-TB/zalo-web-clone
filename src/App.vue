@@ -1,25 +1,26 @@
 <script setup lang="ts">
-import Sidebar from '@/layouts/Sidebar/Sidebar.vue';
+import { Sidebar } from '@/layouts/Sidebar';
 import { Header } from '@/layouts/Header';
 
-import ContactSearch from '@/views/widgets/ContactSearch/ContactSearch.vue';
+import { ContactSearch } from '@/views/widgets/ContactSearch';
 import { ProfileModal } from '@/views/widgets/ProfileModal';
 
-import Contacts from '@/views/Contacts/Contacts.vue';
-import Todo from '@/views/Todo/Todo.vue';
-import Messages from '@/views/Messages/Messages.vue';
+import MessagesContainer from '@/views/Messages/MessagesContainer.vue';
+import ContactsContainer from '@/views/Contacts/ContactsContainer.vue';
+import TodoContainer from '@/views/Todo/TodoContainer.vue';
 
 import { ref, type Ref, provide } from 'vue';
 
 // handle sidebar tabs
-const tabs = {
-  Messages,
-  Contacts,
-  Todo
+const appTabs = {
+  MessagesContainer,
+  ContactsContainer,
+  TodoContainer
 };
-type tabsType = keyof typeof tabs;
-const selectedTab: Ref<tabsType> = ref('Messages'); // default selected tab is Messages
+type appTabsType = keyof typeof appTabs;
+const selectedTab: Ref<appTabsType> = ref(Object.keys(appTabs)[0]) as Ref<appTabsType>; // default selected tab is first element
 provide('selectedTab', selectedTab);
+provide('appTabs', appTabs);
 
 // provide showProfileModal ref
 const showProfileModal = ref(false);
@@ -36,12 +37,11 @@ provide('showProfileModal', showProfileModal);
       <Sidebar />
       <div id="control-section" class="w-[344px] hidden md:block">
         <ContactSearch />
-        <component :is="tabs[selectedTab]" class="tab"></component>
+        <component :is="appTabs[selectedTab]" class="tab"></component>
       </div>
     </nav>
     <main class="w-[100%] border-l">
-      <Header> </Header>
-
-   </main>
+      <Header></Header>
+    </main>
   </div>
 </template>

@@ -19,7 +19,6 @@ interface ButtonProps {
 }
 
 const props = defineProps<ButtonProps>();
-const emit = defineEmits()
 
 const classes = computed(() => ({ 
   'btn-primary': props.type === 'primary',
