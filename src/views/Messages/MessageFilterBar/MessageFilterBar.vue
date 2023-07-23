@@ -66,7 +66,7 @@ const showMore = ref(false);
       </AppTabPane>
       <div
         ref="tabLine"
-        class="tab-line absolute bottom-0 h-[2px] bg-text-information transition-all"
+        class="tab-line absolute bottom-0 h-[2px] bg-text-information transition-all duration-300"
       />
     </AppTabs>
     <div class="flex gap-1">
