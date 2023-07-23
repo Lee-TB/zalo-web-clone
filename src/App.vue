@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Sidebar from '@/layouts/Sidebar/Sidebar.vue';
+import { Header } from '@/layouts/Header';
 
 import ContactSearch from '@/views/widgets/ContactSearch/ContactSearch.vue';
 import { ProfileModal } from '@/views/widgets/ProfileModal';
@@ -38,6 +39,9 @@ provide('showProfileModal', showProfileModal);
         <component :is="tabs[selectedTab]" class="tab"></component>
       </div>
     </nav>
-    <main class="w-[100%] border-l">main view</main>
+    <main class="w-[100%] border-l">
+      <Header> </Header>
+
+   </main>
   </div>
 </template>
