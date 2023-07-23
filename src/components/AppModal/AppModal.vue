@@ -48,12 +48,12 @@ onClickOutside(modalRef, () => {
 });
 </script>
 <template>
-  <Transition name="modal">
+  <Transition name="app-modal">
     <div
       v-if="show"
-      class="fixed top-0 left-0 w-screen h-screen bg-black/40 flex justify-center items-center"
+      class="outer fixed top-0 left-0 w-screen h-screen bg-black/40 flex justify-center items-center"
     >
-      <div ref="modalRef" class="modal relative">
+      <div class="inner relative" ref="modalRef">
         <div v-if="closable" class="absolute right-1 top-1">
           <button
             class="hover:bg-gray-200 w-[32px] h-[32px] flex justify-center items-center p-1 rounded-full"
@@ -81,14 +81,23 @@ onClickOutside(modalRef, () => {
 </template>
 
 <style>
-.modal-enter-active,
-.modal-leave-active {
-  transition: all 0.3s ease;
+.app-modal-enter-from,
+.app-modal-leave-to {
+  opacity: 0;
 }
 
-.modal-enter-from,
-.modal-leave-to {
-  opacity: 0;
-  transform: scale(1.1);
+.app-modal-enter-active,
+.app-modal-leave-active {
+  transition: opacity .3s ease;
+}
+
+.app-modal-enter-from .inner,
+.app-modal-leave-to .inner {
+  transform: scale(0);
+}
+
+.app-modal-enter-active .inner,
+.app-modal-leave-active .inner {
+  transition: transform .3s ease;
 }
 </style>
