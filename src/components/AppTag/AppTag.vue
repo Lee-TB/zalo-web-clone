@@ -1,5 +1,5 @@
 <template>
-  <div class="AppTag inline-flex">
+  <div class="AppTag inline-flex items-center">
     <div
       class="text-sm"
       :class="[{ 'border rounded-md': hasSlotContent }]"
